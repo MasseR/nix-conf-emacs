@@ -69,8 +69,6 @@ ${company}
   )
 
 ${lsp}
-
-;; (server-start)
 '';
 
 in
