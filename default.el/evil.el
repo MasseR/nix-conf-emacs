@@ -11,7 +11,6 @@
 	       "lf" 'projectile-find-file
 	       "ps" 'projectile-switch-project
 	       "ss" 'projectile-switch-project
-	       "cc" 'org-capture
 	       )
 	     (evil-set-undo-system 'undo-tree)
 	     (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
