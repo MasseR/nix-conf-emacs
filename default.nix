@@ -15,8 +15,7 @@ emacsWithPackages ( epkgs: with epkgs; [
   evil-commentary
   evil-collection
   evil-org
-
-  helm
+helm
 
   zenburn-theme
 
@@ -52,4 +51,8 @@ emacsWithPackages ( epkgs: with epkgs; [
   editorconfig
 
   use-package
+
+  direnv
+
+  undo-tree
 ])

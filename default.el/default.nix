@@ -48,8 +48,11 @@ ${dhall}
 ${haskell}
 ${nix}
 ${company}
-${lsp}
 
+(use-package undo-tree
+  :config (global-undo-tree-mode))
+(use-package direnv
+  :config (direnv-mode))
 (use-package editorconfig
   :config (editorconfig-mode 1)
   )
@@ -65,8 +68,9 @@ ${lsp}
   :config (which-key-mode)
   )
 
+${lsp}
 
-(setq masse-was-here 1)
+;; (server-start)
 '';
 
 in
