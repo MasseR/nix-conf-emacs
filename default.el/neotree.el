@@ -1,6 +1,8 @@
 (use-package neotree
-	     :after evil
+	     :after evil evil-leader
 	     :config
+	     (evil-leader/set-key
+	       "ft" 'neotree-toggle)
 	     (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 	     (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 	     (evil-define-key 'normal neotree-mode-map (kbd "g") 'neotree-refresh)

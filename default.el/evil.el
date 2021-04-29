@@ -9,7 +9,6 @@
 	       "gs" 'magit-status
 	       "lb" 'helm-buffers-list
 	       "lf" 'projectile-find-file
-	       "ft" 'neotree
 	       "ps" 'projectile-switch-project
 	       "ss" 'projectile-switch-project
 	       "cc" 'org-capture
