@@ -12,6 +12,7 @@ let
   lsp = builtins.readFile ./lsp.el;
   ido = builtins.readFile ./ido.el;
   org = builtins.readFile ./org.el;
+  org-roam = builtins.readFile ./org-roam.el;
   general = builtins.readFile ./general.el;
   nix-environment = runCommand "nix-environment.el" {
     # Inherit or manually set the attrset here
@@ -39,6 +40,7 @@ substituteAll ${./nix-environment.el.in} $out
   
 ${general}
 ${org}
+${org-roam}
 ${evil}  
 ${neotree}  
 ${helm}  

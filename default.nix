@@ -15,7 +15,10 @@ emacsWithPackages ( epkgs: with epkgs; [
   evil-commentary
   evil-collection
   evil-org
-helm
+
+  org-roam
+
+  helm
 
   zenburn-theme
 
