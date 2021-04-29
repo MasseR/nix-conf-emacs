@@ -13,9 +13,18 @@ let
   ido = builtins.readFile ./ido.el;
   org = builtins.readFile ./org.el;
   general = builtins.readFile ./general.el;
+  nix-environment = runCommand "nix-environment.el" {
+    # Inherit or manually set the attrset here
+  }
+''
+substituteAll ${./nix-environment.el.in} $out
+'';
   generic = writeText "default.el"
 ''
 ; From https://git.sr.ht/~jack/nix-overlay/tree/master/item/jack-emacs/default.el/default.nix
+
+(load "nix-environment")
+
 (require 'package)
 
 ; Prevent any installation from package archives
@@ -65,6 +74,7 @@ in
 runCommand "default.el" {}
 ''
   mkdir -p $out/share/emacs/site-lisp
+  cp ${nix-environment} $out/share/emacs/site-lisp/nix-environment.el
   cp ${generic} $out/share/emacs/site-lisp/default.el
 ''
 

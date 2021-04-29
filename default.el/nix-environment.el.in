@@ -1,0 +1,7 @@
+;; If you want to set up paths for binaries, you can setq the values
+;; in here. The paths will be completed by nix.
+
+;; You can get the full path by interpolating with the at-symbol
+
+;; N.B; the substituteAll command doesn't like hyphens, replace with
+;; underscores
