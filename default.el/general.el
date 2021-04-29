@@ -1,3 +1,14 @@
+;; Emacs wants the user to see the startup screen, so this value can
+;; only be set in the .emacs or equivalent. Or we can cheat and set it
+;; after the init hook
+(add-hook 'after-init-hook
+	  (lambda ()
+	    (setq inhibit-startup-screen t)
+	    ))
+
+
+(setq default-tab-width 2)
+
 (load-theme 'zenburn t)
 
 (global-auto-revert-mode t)
