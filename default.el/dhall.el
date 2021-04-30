@@ -8,7 +8,8 @@
     ))
   )
 (use-package dhall-mode
-  :after lsp-mode
+  :after lsp-mode smartparens
   :config
+  (sp-local-pair 'dhall-mode "\\(" ")")
   (setup-dhall-lsp)
   )
