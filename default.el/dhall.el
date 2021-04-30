@@ -11,4 +11,9 @@
   :after lsp-mode
   :config
   (setup-dhall-lsp)
+  (evil-leader/set-key-for-mode 'dhall-mode
+    ; No code actions for dhall :(
+    ;; "a" 'lsp-execute-code-action
+    "dd" 'flycheck-list-errors
+    )
   )
