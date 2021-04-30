@@ -1,0 +1,14 @@
+(use-package org-roam
+  :after evil evil-leader
+  :config
+  (setq
+   org-roam-directory "~/org-roam"
+   org-roam-completion-system 'helm
+   )
+  (add-hook 'after-init-hook 'org-roam-mode)
+  (evil-define-key 'insert org-roam-mode-map (kbd "C-c r i") 'org-roam-insert)
+  (evil-leader/set-key ; or for roam
+    "orf" 'org-roam-find-file
+    "orr" 'org-roam
+    )
+  )
