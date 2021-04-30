@@ -58,4 +58,6 @@ emacsWithPackages ( epkgs: with epkgs; [
   direnv
 
   undo-tree
+
+  ledger-mode
 ])

@@ -13,6 +13,7 @@ let
   ido = builtins.readFile ./ido.el;
   org = builtins.readFile ./org.el;
   org-roam = builtins.readFile ./org-roam.el;
+  ledger = builtins.readFile ./ledger.el;
   general = builtins.readFile ./general.el;
   nix-environment = runCommand "nix-environment.el" {
     # Inherit or manually set the attrset here
@@ -49,6 +50,7 @@ ${ido}
 ${dhall}
 ${haskell}
 ${nix}
+${ledger}
 ${company}
 
 (use-package undo-tree
