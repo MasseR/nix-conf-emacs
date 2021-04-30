@@ -33,5 +33,6 @@
 	     (evil-leader/set-key-for-mode 'haskell-mode
 	       "a" 'lsp-execute-code-action
 	       "dd" 'flycheck-list-errors
+	       "hl" 'haskell-process-load-file
 	       )
 	     )
