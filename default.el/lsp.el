@@ -11,7 +11,7 @@
 
 ;; Haskell configuration
 ;; https://github.com/wbolster/emacs-direnv/issues/28
-(define-advice direnv-update-directory-environment (:after (x) haskell-after-direnv)
+(define-advice direnv-update-directory-environment (:after (&rest x) haskell-after-direnv)
   (when (eq major-mode 'haskell-mode)
 	 (lsp)))
 (use-package lsp-haskell
