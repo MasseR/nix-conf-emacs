@@ -5,3 +5,6 @@
 
 ;; N.B; the substituteAll command doesn't like hyphens, replace with
 ;; underscores
+
+(setq
+ emacsql-sqlite3-executable "@sqlite@/bin/sqlite3")

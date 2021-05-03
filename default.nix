@@ -1,4 +1,4 @@
-{ emacsWithPackages, callPackage, runCommand, writeText }:
+{ emacsWithPackages, callPackage, runCommand, writeText, sqlite }:
 
 let
   default-el = callPackage ./default.el {};
