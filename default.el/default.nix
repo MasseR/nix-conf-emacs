@@ -9,9 +9,10 @@ let
   projectile = builtins.readFile ./projectile.el;
   haskell = builtins.readFile ./haskell.el;
   nix = builtins.readFile ./nix.el;
-  lsp = builtins.readFile ./lsp.el;
+  # lsp = builtins.readFile ./lsp.el;
   ido = builtins.readFile ./ido.el;
   org = builtins.readFile ./org.el;
+  eglot = builtins.readFile ./eglot.el;
   org-roam = builtins.readFile ./org-roam.el;
   ledger = builtins.readFile ./ledger.el;
   general = builtins.readFile ./general.el;
@@ -44,6 +45,7 @@ ${general}
 ${org}
 ${org-roam}
 ${evil}  
+${eglot}
 ${neotree}  
 ${helm}  
 ${projectile}  
@@ -73,7 +75,6 @@ ${company}
   :config (which-key-mode)
   )
 
-${lsp}
 '';
 
 in
