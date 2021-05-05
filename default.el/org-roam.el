@@ -4,6 +4,7 @@
   (setq
    org-roam-directory "~/org-roam"
    org-roam-completion-system 'helm
+   org-roam-db-update-method 'immediate
    )
   (add-hook 'after-init-hook 'org-roam-mode)
   (evil-define-key 'insert org-roam-mode-map (kbd "C-c r i") 'org-roam-insert)
