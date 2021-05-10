@@ -8,9 +8,9 @@
     ))
   )
 (use-package dhall-mode
-  :after lsp-mode
+  :after eglot
   :config
-  (setup-dhall-lsp)
+  (add-to-list 'eglot-server-programs '(dhall-mode . ("dhall-lsp-server")))
   (evil-leader/set-key-for-mode 'dhall-mode
     ; No code actions for dhall :(
     ;; "a" 'lsp-execute-code-action
