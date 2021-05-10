@@ -26,3 +26,4 @@
 	       "d" 'org-deadline
 	       )
 	     )
+(use-package org-protocol)
