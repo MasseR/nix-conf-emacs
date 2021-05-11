@@ -1,4 +1,4 @@
-{ writeText, runCommand, sqlite }:
+{ writeText, runCommand, sqlite, qutebrowser }:
 
 let
   evil = builtins.readFile ./evil.el;
@@ -17,7 +17,7 @@ let
   general = builtins.readFile ./general.el;
   nix-environment = runCommand "nix-environment.el" {
     # Inherit or manually set the attrset here
-    inherit sqlite;
+    inherit sqlite qutebrowser;
   }
 ''
 substituteAll ${./nix-environment.el.in} $out
