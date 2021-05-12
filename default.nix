@@ -84,6 +84,7 @@ in
   magit
 
   ido-vertical-mode
+  flx-ido
 
   editorconfig
 

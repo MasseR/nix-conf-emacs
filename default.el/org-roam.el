@@ -13,3 +13,4 @@
     "orr" 'org-roam
     )
   )
+(use-package org-roam-protocol)

@@ -1,4 +1,4 @@
-{ writeText, runCommand, sqlite }:
+{ writeText, runCommand, sqlite, qutebrowser }:
 
 let
   evil = builtins.readFile ./evil.el;
@@ -9,7 +9,6 @@ let
   projectile = builtins.readFile ./projectile.el;
   haskell = builtins.readFile ./haskell.el;
   nix = builtins.readFile ./nix.el;
-  # lsp = builtins.readFile ./lsp.el;
   ido = builtins.readFile ./ido.el;
   org = builtins.readFile ./org.el;
   eglot = builtins.readFile ./eglot.el;
@@ -18,7 +17,7 @@ let
   general = builtins.readFile ./general.el;
   nix-environment = runCommand "nix-environment.el" {
     # Inherit or manually set the attrset here
-    inherit sqlite;
+    inherit sqlite qutebrowser;
   }
 ''
 substituteAll ${./nix-environment.el.in} $out
@@ -41,6 +40,8 @@ substituteAll ${./nix-environment.el.in} $out
       package--init-file-ensured t
   )
   
+(use-package undo-tree
+  :config (global-undo-tree-mode))
 ${general}
 ${org}
 ${org-roam}
@@ -56,8 +57,7 @@ ${nix}
 ${ledger}
 ${company}
 
-(use-package undo-tree
-  :config (global-undo-tree-mode))
+
 (use-package direnv
   :config (direnv-mode))
 (use-package editorconfig
