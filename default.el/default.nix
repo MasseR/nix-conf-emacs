@@ -40,6 +40,8 @@ substituteAll ${./nix-environment.el.in} $out
       package--init-file-ensured t
   )
   
+(use-package undo-tree
+  :config (global-undo-tree-mode))
 ${general}
 ${org}
 ${org-roam}
@@ -55,8 +57,7 @@ ${nix}
 ${ledger}
 ${company}
 
-(use-package undo-tree
-  :config (global-undo-tree-mode))
+
 (use-package direnv
   :config (direnv-mode))
 (use-package editorconfig

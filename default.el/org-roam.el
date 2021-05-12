@@ -3,7 +3,7 @@
   :config
   (setq
    org-roam-directory "~/org-roam"
-   org-roam-completion-system 'helm
+   org-roam-completion-system 'ido
    org-roam-db-update-method 'immediate
    )
   (add-hook 'after-init-hook 'org-roam-mode)
