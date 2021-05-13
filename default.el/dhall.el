@@ -8,7 +8,7 @@
     ))
   )
 (use-package dhall-mode
-  :after eglot
+  :after eglot smartparens
   :config
   (sp-local-pair 'dhall-mode "\\(" ")")
   (add-to-list 'eglot-server-programs '(dhall-mode . ("dhall-lsp-server")))
