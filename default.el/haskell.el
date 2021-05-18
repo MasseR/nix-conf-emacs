@@ -35,8 +35,6 @@
 	       "dd" 'flymake-show-diagnostics-buffer
 	       "hl" 'haskell-process-load-file
 	       "hf" 'eglot-format-buffer
-	       "]]" 'sp-forward-slurp-sexp
-	       "[[" 'sp-forward-barf-sexp
 	       )
 	     )
 ;; (use-package lsp-haskell
