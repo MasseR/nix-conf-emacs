@@ -29,13 +29,15 @@
   :after evil
   :config (evil-commentary-mode 1))
 (use-package evil-org
+  :after org
+  :hook (org-mode . (lambda () evil-org-mode))
   :config
-  (add-hook 'org-mode-hook 'evil-org-mode)
-  (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys)
   )
-(use-package evil-org-agenda
-  :after evil
-  :config (evil-org-agenda-set-keys))
+;; (use-package evil-org-agenda
+;;   :after evil
+;;   :config (evil-org-agenda-set-keys))
 (use-package evil-collection
   :after evil
   :config (evil-collection-init)
