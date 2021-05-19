@@ -57,6 +57,8 @@ in
   zenburn-theme
 
   markdown-mode
+  yaml-mode
+  graphviz-dot-mode
 
   rainbow-delimiters
   smartparens

@@ -14,6 +14,7 @@ let
   eglot = builtins.readFile ./eglot.el;
   org-roam = builtins.readFile ./org-roam.el;
   ledger = builtins.readFile ./ledger.el;
+  whitespace = builtins.readFile ./whitespace.el;
   general = builtins.readFile ./general.el;
   nix-environment = runCommand "nix-environment.el" {
     # Inherit or manually set the attrset here
@@ -56,8 +57,15 @@ ${haskell}
 ${nix}
 ${ledger}
 ${company}
+${whitespace}
 
 
+(use-package yaml-mode)
+(use-package graphviz-dot-mode
+  :config
+  (setq graphviz-dot-indent-width 2)
+  )
+(use-package company-graphviz-dot)
 (use-package direnv
   :config (direnv-mode))
 (use-package editorconfig
