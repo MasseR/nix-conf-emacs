@@ -31,8 +31,8 @@
   :config (evil-commentary-mode 1))
 (use-package evil-org
   :after org
-  :hook (org-mode . (lambda () evil-org-mode))
   :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys)
   )
