@@ -1,8 +1,9 @@
 (use-package evil
-  :init (setq evil-want-integration t
-	      evil-want-keybinding nil
-	      evil-want-C-u-scroll t
-	      )
+  :init
+  (setq evil-want-integration t
+        evil-want-keybinding nil
+        evil-want-C-u-scroll t
+        )
   :config
   (evil-mode t)
   (evil-leader/set-key
