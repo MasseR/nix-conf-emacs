@@ -11,6 +11,7 @@
   (evil-leader/set-key ; or for roam
     "orf" 'org-roam-find-file
     "orr" 'org-roam
+    "ord" 'org-roam-dailies-capture-today
     )
   )
 (use-package org-roam-protocol)

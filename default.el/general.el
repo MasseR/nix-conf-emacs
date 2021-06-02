@@ -2,9 +2,9 @@
 ;; only be set in the .emacs or equivalent. Or we can cheat and set it
 ;; after the init hook
 (add-hook 'after-init-hook
-	  (lambda ()
-	    (setq inhibit-startup-screen t)
-	    ))
+          (lambda ()
+            (setq inhibit-startup-screen t)
+            ))
 
 
 (setq default-tab-width 2)
@@ -18,6 +18,12 @@
   (modify-frame-parameters
    frame (list (cons 'cursor-color "White"))))
 (add-hook 'after-make-frame-functions 'set-cursor-hook)
+
+;; Whitespace
+(setq-default
+ indent-tabs-mode nil
+ tab-width 2
+ )
 
 ;; Backups
 (setq
