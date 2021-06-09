@@ -12,6 +12,7 @@
     "orf" 'org-roam-find-file
     "orr" 'org-roam
     "ord" 'org-roam-dailies-capture-today
+    "org" 'org-roam-graph
     )
   )
 (use-package org-roam-protocol)
