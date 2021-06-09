@@ -40,9 +40,16 @@ substituteAll ${./nix-environment.el.in} $out
       package-enable-at-startup nil
       package--init-file-ensured t
   )
-  
+
 (use-package undo-tree
   :config (global-undo-tree-mode))
+(use-package rainbow-delimiters)
+(use-package smartparens
+  :config (smartparens-global-mode)
+  )
+(use-package smartparens-config
+  :after smartparens
+  )
 ${general}
 ${org}
 ${org-roam}
@@ -72,16 +79,10 @@ ${whitespace}
   :config (editorconfig-mode 1)
   )
 (use-package magit)
-(use-package rainbow-delimiters)
-(use-package smartparens
-  :config (smartparens-global-mode)
-  )
-(use-package smartparens-config
-  :after smartparens
-  )
 (use-package which-key
   :config (which-key-mode)
   )
+(use-package notmuch)
 
 '';
 

@@ -97,4 +97,6 @@ in
   undo-tree
 
   ledger-mode
+
+  notmuch
 ])
