@@ -15,6 +15,7 @@
    org-agenda-start-on-weekday nil ; Agenda always starts on the current day
    org-agenda-overriding-columns-format "%40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM %TODO" ; Have the same agenda for all
    org-global-properties '(("Effort_ALL" . "0 0:15 0:30 1:00 2:00 4:00 7:30"))
+   org-duration-format 'h:mm
    )
   (evil-leader/set-key
                                         ; Allows using capture in any buffer, not just in org-mode
