@@ -33,12 +33,11 @@
   :after org
   :config
   (add-hook 'org-mode-hook 'evil-org-mode)
-  (require 'evil-org-agenda)
   (evil-org-agenda-set-keys)
   )
-;; (use-package evil-org-agenda
-;;   :after evil
-;;   :config (evil-org-agenda-set-keys))
+(use-package evil-org-agenda
+  :after evil
+  :config (evil-org-agenda-set-keys))
 (use-package evil-collection
   :after evil
   :config (evil-collection-init)
