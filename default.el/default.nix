@@ -16,6 +16,7 @@ let
   ledger = builtins.readFile ./ledger.el;
   whitespace = builtins.readFile ./whitespace.el;
   general = builtins.readFile ./general.el;
+  epa = builtins.readFile ./emacs_epa.el;
   nix-environment = runCommand "nix-environment.el" {
     # Inherit or manually set the attrset here
     inherit sqlite qutebrowser;
@@ -65,6 +66,7 @@ ${nix}
 ${ledger}
 ${company}
 ${whitespace}
+${epa}
 
 
 (use-package yaml-mode)
