@@ -57,6 +57,8 @@ in
   zenburn-theme
 
   markdown-mode
+  yaml-mode
+  graphviz-dot-mode
 
   rainbow-delimiters
   smartparens
@@ -95,4 +97,6 @@ in
   undo-tree
 
   ledger-mode
+
+  notmuch
 ])
