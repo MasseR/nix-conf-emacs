@@ -54,11 +54,11 @@ substituteAll ${./nix-environment.el.in} $out
 ${general}
 ${org}
 ${org-roam}
-${evil}  
+${evil}
 ${eglot}
-${neotree}  
-${helm}  
-${projectile}  
+${neotree}
+${helm}
+${projectile}
 ${ido}
 ${dhall}
 ${haskell}
