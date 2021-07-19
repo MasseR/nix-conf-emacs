@@ -7,6 +7,10 @@
             ))
 
 
+;; By default emacs detects sentences as ending with a period and
+;; double space.
+(setf sentence-end-double-space nil)
+
 (setq default-tab-width 2)
 
 (load-theme 'zenburn t)
