@@ -1,5 +1,5 @@
 (use-package dhall-mode
-  :after eglot
+  :after eglot smartparens
   :config
   (sp-local-pair 'dhall-mode "\\(" ")")
   (sp-local-pair 'dhall-mode "''" "''")
