@@ -14,14 +14,18 @@
    org-refile-targets '((org-agenda-files :maxlevel . 3))
    org-agenda-start-on-weekday nil ; Agenda always starts on the current day
    org-agenda-overriding-columns-format "%40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM %TODO" ; Have the same agenda for all
-   org-global-properties '(("Effort_ALL" . "0 0:15 0:30 1:00 2:00 4:00 7:30"))
+   org-global-properties '(("Effort_ALL" . "0 0:15 0:30 1:00 2:00 4:00 8:00"))
    org-duration-format 'h:mm
+   org-agenda-sorting-strategy '((agenda habit-down time-up priority-down effort-up category-keep)
+                                 (todo priority-down category-keep)
+                                 (tags priority-down category-keep)
+                                 (search category-keep))
    )
   (evil-leader/set-key
                                         ; Allows using capture in any buffer, not just in org-mode
-    "cc" 'org-capture)
+    "cc" 'org-capture
+    "a" 'org-agenda)
   (evil-leader/set-key-for-mode 'org-mode
-    "a" 'org-agenda
     "t" 'org-todo
     "s" 'org-schedule
     "d" 'org-deadline
