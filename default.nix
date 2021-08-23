@@ -50,7 +50,7 @@ in
   evil-collection
   evil-org
 
-  org-roam
+  # org-roam
 
   helm
 

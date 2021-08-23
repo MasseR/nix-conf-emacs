@@ -12,7 +12,7 @@ let
   ido = builtins.readFile ./ido.el;
   org = builtins.readFile ./org.el;
   eglot = builtins.readFile ./eglot.el;
-  org-roam = builtins.readFile ./org-roam.el;
+  # org-roam = builtins.readFile ./org-roam.el;
   ledger = builtins.readFile ./ledger.el;
   whitespace = builtins.readFile ./whitespace.el;
   general = builtins.readFile ./general.el;
@@ -53,7 +53,6 @@ substituteAll ${./nix-environment.el.in} $out
   )
 ${general}
 ${org}
-${org-roam}
 ${evil}
 ${eglot}
 ${neotree}
