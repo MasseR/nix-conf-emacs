@@ -30,10 +30,9 @@
   :after evil
   :config (evil-commentary-mode 1))
 (use-package evil-org
-  :after org
+  :after org evil
   :config
   (add-hook 'org-mode-hook 'evil-org-mode)
-  (evil-org-agenda-set-keys)
   )
 (use-package evil-org-agenda
   :after evil

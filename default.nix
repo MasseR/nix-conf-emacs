@@ -37,7 +37,8 @@ let
 
 in
 
-((emacsPackagesGen emacs).overrideScope' overrides).emacsWithPackages ( epkgs: with epkgs; [
+# ((emacsPackagesGen emacs).overrideScope' overrides).emacsWithPackages ( epkgs: with epkgs; [
+emacsWithPackages ( epkgs: with epkgs; [
   default-el
 
   eglot
