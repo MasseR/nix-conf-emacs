@@ -5,9 +5,9 @@
    org-roam-directory "~/org-roam"
    org-roam-completion-system 'helm
    org-roam-db-update-method 'immediate
-   org-roam-encrypt-files t
+   org-roam-v2-ack t
    )
-  (add-hook 'after-init-hook 'org-roam-mode)
+  ; (add-hook 'after-init-hook 'org-roam-mode)
   (evil-define-key 'insert org-roam-mode-map (kbd "C-c r i") 'org-roam-insert)
   (evil-leader/set-key ; or for roam
     "orf" 'org-roam-find-file
@@ -16,4 +16,4 @@
     "org" 'org-roam-graph
     )
   )
-(use-package org-roam-protocol)
+; (use-package org-roam-protocol)

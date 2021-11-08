@@ -17,9 +17,9 @@
 ;;   (when (eq major-mode 'haskell-mode)
 ;; 	 (eglot)))
 
-(eglot--code-action eglot-code-action-fill-hole "refactor.wingman.fillHole")
-(eglot--code-action eglot-code-action-refine "refactor.wingman.refine")
-(eglot--code-action eglot-code-action-import "quickfix.import.new.list.topLevel")
+;; (eglot--code-action eglot-code-action-fill-hole "refactor.wingman.fillHole")
+;; (eglot--code-action eglot-code-action-refine "refactor.wingman.refine")
+;; (eglot--code-action eglot-code-action-import "quickfix.import.new.list.topLevel")
 
 (use-package haskell-mode
   :after evil
@@ -35,12 +35,12 @@
   (evil-define-key 'normal haskell-mode-map "gd" 'xref-find-definitions)
   (evil-define-key 'normal haskell-mode-map "gr" 'xref-find-references)
   (evil-leader/set-key-for-mode 'haskell-mode
-    "ca" 'eglot-code-actions
-    "ii" 'eglot-code-action-import
-    "ww" 'eglot-code-action-refine
-    "wf" 'eglot-code-action-fill-hole
-    "dd" 'flymake-show-diagnostics-buffer
+    ;; "ca" 'eglot-code-actions
+    ;; "ii" 'eglot-code-action-import
+    ;; "ww" 'eglot-code-action-refine
+    ;; "wf" 'eglot-code-action-fill-hole
+    ;; "dd" 'flymake-show-buffer-diagnostics
     "hl" 'haskell-process-load-file
-    "hf" 'eglot-format-buffer
+    ;; "hf" 'eglot-format-buffer
     )
   )

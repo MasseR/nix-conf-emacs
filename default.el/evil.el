@@ -29,9 +29,14 @@
 (use-package evil-commentary
   :after evil
   :config (evil-commentary-mode 1))
+;; https://githubmemory.com/repo/Somelauw/evil-org-mode/issues/93
+(fset 'evil-redirect-digit-argument 'ignore)
 (use-package evil-org
   :after org evil
   :config
+  (add-to-list 'evil-digit-bound-motions 'evil-org-beginning-of-line)
+  (evil-define-key 'motion 'evil-org-mode
+    (kbd "0") 'evil-org-beginning-of-line)
   (add-hook 'org-mode-hook 'evil-org-mode)
   )
 (use-package evil-org-agenda

@@ -11,7 +11,8 @@ let
   nix = builtins.readFile ./nix.el;
   ido = builtins.readFile ./ido.el;
   org = builtins.readFile ./org.el;
-  eglot = builtins.readFile ./eglot.el;
+  # eglot = builtins.readFile ./eglot.el;
+  lsp-mode = builtins.readFile ./lsp.el;
   # org-roam = builtins.readFile ./org-roam.el;
   ledger = builtins.readFile ./ledger.el;
   whitespace = builtins.readFile ./whitespace.el;
@@ -54,7 +55,7 @@ substituteAll ${./nix-environment.el.in} $out
 ${general}
 ${org}
 ${evil}
-${eglot}
+${lsp-mode}
 ${neotree}
 ${helm}
 ${projectile}

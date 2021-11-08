@@ -2,6 +2,7 @@
 
 let
   default-el = callPackage ./default.el {};
+  # I'm leaving the overrides here as a guide to the future
   overrides = self: super: rec {
     project = self.callPackage ({ elpaBuild, emacs, fetchurl, lib, xref }:
       elpaBuild {
@@ -41,7 +42,7 @@ in
 emacsWithPackages ( epkgs: with epkgs; [
   default-el
 
-  eglot
+  # eglot
 
   evil
   evil-leader
@@ -50,8 +51,6 @@ emacsWithPackages ( epkgs: with epkgs; [
   evil-commentary
   evil-collection
   evil-org
-
-  # org-roam
 
   helm
 
@@ -64,8 +63,10 @@ emacsWithPackages ( epkgs: with epkgs; [
   rainbow-delimiters
   smartparens
 
-  # lsp-mode
-  # lsp-ui
+  lsp-mode
+  lsp-ui
+  lsp-treemacs
+  avy
 
   flycheck
 
@@ -75,8 +76,9 @@ emacsWithPackages ( epkgs: with epkgs; [
 
   nix-mode
   haskell-mode
-  # lsp-haskell
   dhall-mode
+
+  lsp-haskell
 
   which-key
 
@@ -88,6 +90,7 @@ emacsWithPackages ( epkgs: with epkgs; [
 
   ido-vertical-mode
   flx-ido
+  epkgs."ido-completing-read+"
 
   editorconfig
 

@@ -12,3 +12,8 @@
   (flx-ido-mode 1)
   (setq ido-enable-flex-matching t
         ido-use-faces nil))
+
+(use-package ido-completing-read+
+  :after ido
+  :config
+  (ido-ubiquitous-mode 1))
