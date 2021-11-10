@@ -8,10 +8,16 @@
     :new-connection (lsp-stdio-connection "dhall-lsp-server")
     :major-modes '(dhall-mode)
     :server-id 'lsp-dhall))
+  (lsp-register-client
+   (make-lsp--client
+    :new-connection (lsp-stdio-connection "rnix-lsp")
+    :major-modes '(nix-mode)
+    :server-id 'lsp-nix))
   (evil-define-key 'normal lsp-mode-map
     "gd" 'xref-find-definitions
     "]n" 'flycheck-next-error
     "[n" 'flycheck-previous-error
+    "K" 'lsp-ui-doc-glance
     )
   ;; I wasn't able to figure out how to make it work for lsp-mode
   ;; (evil-leader/set-key-for-mode 'lsp
@@ -25,7 +31,9 @@
     )
   )
 
-(use-package lsp-ui)
+(use-package lsp-ui
+  :config
+  (setq lsp-ui-doc-position 'bottom))
 
 ; https://github.com/wbolster/emacs-direnv/issues/28#issuecomment-500388468
 (defun prepare-haskell-in-shell (&rest args)
