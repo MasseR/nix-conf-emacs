@@ -4,12 +4,18 @@
   inputs.flake-utils.url = "github:numtide/flake-utils";
 
   outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (
+    {
+      overlay = final: prev: {
+        myEmacs = final.callPackage ./. {};
+      };
+    }
+    //
+    flake-utils.lib.eachSystem ["x86_64-linux"] (
       system:
-      let pkgs = nixpkgs.legacyPackages.${system};
+      let pkgs = import nixpkgs { inherit system; overlays = [ self.overlay ]; };
       in
         rec {
-          packages.myEmacs = pkgs.callPackage ./. {};
+          packages.myEmacs = pkgs.myEmacs;
           defaultPackage = packages.myEmacs;
           apps.myEmacs = {
             type = "app";
