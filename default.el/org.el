@@ -29,7 +29,7 @@
   (setq
    ;; Set this manually in each environments .emacs
    ;; org-agenda-files '("~/orgmode/" "~/personal_orgmode")
-   org-todo-keywords '("TODO(t)" "PROJECT(p)" "WAIT(w@/!)" "REVIEWING(r)" "MAYBE(m)" "|" "DONE(d!)" "CANCELED(c@)" "DELEGATED(e@)")
+   org-todo-keywords '("TODO(t)" "NEXT(n)" "PROJECT(p)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")
    org-log-done 'time
    org-refile-use-outline-path nil
    org-agenda-todo-ignore-scheduled t ; Filter scheduled tasks from the *global todo list*
