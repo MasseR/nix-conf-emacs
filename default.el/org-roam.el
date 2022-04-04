@@ -14,11 +14,11 @@
                                  :unnarrowed t)
                                 ("m" "meeting" plain "%?"
                                  :target (file+head  "%<%Y%m%d%H%M%S>-${slug}.org"
-                                                     "#+project:\n#+title: ${title}\n* Attendees\n* Agenda\n* Goals\n* Discussion notes\n* Action items\n")
+                                                     "#+title: ${title}\n\n* Project\n* Attendees\n* Agenda\n* Goals\n* Discussion notes\n* Action items\n")
                                  :unnarrowed t)
                                 ("c" "Contact" plain "%?"
                                  :target (file+head  "%<%Y%m%d%H%M%S>-${slug}.org"
-                                                     "#+name: ${title}\n#+team:")
+                                                     "#+title: ${title}\nTeam:")
                                  :unnarrowed t)
                                 ("p" "Project" plain "%?"
                                  :target (file+head  "%<%Y%m%d%H%M%S>-${slug}.org"
@@ -26,14 +26,13 @@
                                  :unnarrowed t)
                                 ("i" "Issue" plain "%?"
                                  :target (file+head  "%<%Y%m%d%H%M%S>-${slug}.org"
-                                                     "#+title: ${title}\n#+author:\n#+project:\n")
+                                                     "#+title: ${title}\nAuthor::.\nProject::.\n")
                                  :unnarrowed t)
                                 )
    )
   (org-roam-db-autosync-mode)
   ; (add-hook 'after-init-hook 'org-roam-mode)
-  (evil-define-key 'insert org-roam-mode-map (kbd "C-c r i") 'org-roam-node-insert)
-  (evil-define-key 'insert org-roam-mode-map (kbd "C-c r") 'org-roam-node-insert)
+  (evil-define-key 'insert org-mode-map (kbd "C-c r i") 'org-roam-node-insert)
   (evil-leader/set-key ; or for roam
     "orf" 'org-roam-node-find
     "ori" 'org-roam-node-insert
