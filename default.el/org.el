@@ -55,6 +55,9 @@
     "s" 'org-schedule
     "d" 'org-deadline
     )
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((dot . t)))
   )
 (use-package org-protocol)
 

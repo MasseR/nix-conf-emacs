@@ -88,9 +88,9 @@ emacsWithPackages ( epkgs: with epkgs; [
   diff-hl
   magit
 
-  ido-vertical-mode
-  flx-ido
-  epkgs."ido-completing-read+"
+  # ido-vertical-mode
+  # flx-ido
+  # epkgs."ido-completing-read+"
 
   editorconfig
 
@@ -103,4 +103,9 @@ emacsWithPackages ( epkgs: with epkgs; [
   ledger-mode
 
   notmuch
+
+  org-roam
+
+  ivy
+  counsel
 ])

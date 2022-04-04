@@ -10,10 +10,11 @@ let
   haskell = builtins.readFile ./haskell.el;
   nix = builtins.readFile ./nix.el;
   ido = builtins.readFile ./ido.el;
+  ivy = builtins.readFile ./ivy.el;
   org = builtins.readFile ./org.el;
   # eglot = builtins.readFile ./eglot.el;
   lsp-mode = builtins.readFile ./lsp.el;
-  # org-roam = builtins.readFile ./org-roam.el;
+  org-roam = builtins.readFile ./org-roam.el;
   ledger = builtins.readFile ./ledger.el;
   whitespace = builtins.readFile ./whitespace.el;
   general = builtins.readFile ./general.el;
@@ -53,13 +54,13 @@ substituteAll ${./nix-environment.el.in} $out
   :after smartparens
   )
 ${general}
+${ivy}
 ${org}
 ${evil}
 ${lsp-mode}
 ${neotree}
 ${helm}
 ${projectile}
-${ido}
 ${dhall}
 ${haskell}
 ${nix}
@@ -67,6 +68,7 @@ ${ledger}
 ${company}
 ${whitespace}
 ${epa}
+${org-roam}
 
 
 (use-package yaml-mode)

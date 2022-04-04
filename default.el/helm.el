@@ -1,6 +1,6 @@
-(use-package helm
-	     :config
-	     (setq
-	      helm-completion-style 'emacs
-	      completion-styles '(flex)
-	     ))
+;; (use-package helm
+;;   :config
+;;   (setq
+;;    helm-completion-style 'emacs
+;;    ;; completion-styles '(flex)
+;;    ))

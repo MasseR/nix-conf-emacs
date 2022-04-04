@@ -5,7 +5,10 @@
   (ido-vertical-mode 1)
   (setq ido-enable-flex-matching t
         ido-everywhere t
-        ido-vertical-define-keys 'C-n-C-p-up-and-down))
+        ido-vertical-define-keys 'C-n-C-p-up-and-down)
+  )
+
+(define-key minibuffer-local-completion-map " " 'self-insert-command)
 
 (use-package flx-ido
   :config
