@@ -1,4 +1,4 @@
-{ emacsPackagesGen, emacs, emacsWithPackages, callPackage, runCommand, writeText, sqlite }:
+{ emacsPackagesGen, emacs, callPackage, runCommand, writeText, sqlite }:
 
 let
   default-el = callPackage ./default.el {};
@@ -39,7 +39,7 @@ let
 in
 
 # ((emacsPackagesGen emacs).overrideScope' overrides).emacsWithPackages ( epkgs: with epkgs; [
-emacsWithPackages ( epkgs: with epkgs; [
+emacs.pkgs.withPackages ( epkgs: with epkgs; [
   default-el
 
   # eglot
