@@ -45,7 +45,9 @@ substituteAll ${./nix-environment.el.in} $out
   )
 
 (use-package undo-tree
-  :config (global-undo-tree-mode))
+  :config
+  (global-undo-tree-mode)
+  (setq undo-tree-auto-save-history nil) )
 (use-package rainbow-delimiters)
 (use-package smartparens
   :config (smartparens-global-mode)
