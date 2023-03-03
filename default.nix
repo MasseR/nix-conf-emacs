@@ -58,7 +58,6 @@ emacs.pkgs.withPackages ( epkgs: with epkgs; [
 
   markdown-mode
   yaml-mode
-  graphviz-dot-mode
 
   rainbow-delimiters
   smartparens
