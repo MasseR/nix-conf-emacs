@@ -74,11 +74,6 @@ ${org-roam}
 
 
 (use-package yaml-mode)
-(use-package graphviz-dot-mode
-  :config
-  (setq graphviz-dot-indent-width 2)
-  )
-(use-package company-graphviz-dot)
 (use-package direnv
   :config (direnv-mode))
 (use-package editorconfig
