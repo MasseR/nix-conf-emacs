@@ -19,6 +19,8 @@ emacs.pkgs.withPackages ( epkgs: with epkgs; [
   evil-collection
   evil-org
 
+  todotxt
+
   helm
 
   zenburn-theme

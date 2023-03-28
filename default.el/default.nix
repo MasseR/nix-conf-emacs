@@ -19,6 +19,7 @@ let
   whitespace = builtins.readFile ./whitespace.el;
   general = builtins.readFile ./general.el;
   epa = builtins.readFile ./emacs_epa.el;
+  todotxt = builtins.readFile ./todotxt.el;
   nix-environment = runCommand "nix-environment.el" {
     # Inherit or manually set the attrset here
     inherit sqlite qutebrowser;
@@ -71,6 +72,7 @@ ${company}
 ${whitespace}
 ${epa}
 ${org-roam}
+${todotxt}
 
 
 (use-package yaml-mode)
