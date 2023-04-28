@@ -35,6 +35,8 @@ substituteAll ${./nix-environment.el.in} $out
 
 (require 'package)
 
+(setq-default frame-title-format '("%f [" mode-name "]"))
+
 ; Prevent any installation from package archives
 (setq package-archives nil)
 
