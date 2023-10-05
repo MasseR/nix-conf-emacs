@@ -50,6 +50,9 @@
                                         ; Allows using capture in any buffer, not just in org-mode
     "cc" 'org-capture
     "a" 'org-agenda)
+  (evil-leader/set-key-for-mode 'org-agenda-mode
+    "t" 'org-agenda-filter-by-tag
+  )
   (evil-leader/set-key-for-mode 'org-mode
     "t" 'org-todo
     "s" 'org-schedule
