@@ -52,6 +52,7 @@
     "a" 'org-agenda)
   (evil-leader/set-key-for-mode 'org-agenda-mode
     "t" 'org-agenda-filter-by-tag
+    "v" 'org-agenda-log-mode
   )
   (evil-leader/set-key-for-mode 'org-mode
     "t" 'org-todo
