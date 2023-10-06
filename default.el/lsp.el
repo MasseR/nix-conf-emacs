@@ -10,7 +10,7 @@
     :server-id 'lsp-dhall))
   (lsp-register-client
    (make-lsp--client
-    :new-connection (lsp-stdio-connection "rnix-lsp")
+    :new-connection (lsp-stdio-connection "nil")
     :major-modes '(nix-mode)
     :server-id 'lsp-nix))
   (evil-define-key 'normal lsp-mode-map
