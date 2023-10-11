@@ -7,17 +7,25 @@
   ; Recreate it from org-agenda
   (org-agenda-to-appt))
 
+(defun send-notification-to-ntfy (msg)
+  "Send a message to ntfy.rauhala.info"
+  (let ((url "https://ntfy.rauhala.info")
+        (url-request-method "POST")
+        (url-request-extra-headers '(("Content-Type" . "application/json")))
+        (url-request-data (json-encode `(("topic" . "notifications")
+                                         ("tags" . ("calendar"))
+                                         ("title" . "Appointment")
+                                         ("message" . ,msg)))))
+    (url-retrieve url
+                  (lambda (status)
+                    (when (equal (car status) :error)
+                      (message "Error making notification: %s" (cdr status)))))))
+
 ;; appt notifications through notifications
 ;; https://emacs.stackexchange.com/questions/3844/good-methods-for-setting-up-alarms-audio-visual-triggered-by-org-mode-events
 ;; Use both the notifications system and the original value
 (defun appt-notify (min-to-app new-time appt-msg)
-  (notifications-notify :title "Appointment"
-                        ; Doc says the time is a string
-                        :body (format "Appointment in %s minutes: %s" min-to-app appt-msg)
-                        :app-name "Emacs: Org"
-                        :timeout 0
-                        ; I don't seem to have this audio
-                        :sound-name "alarm-clock-elapsed")
+  (send-notification-to-ntfy (format "Appointment in %s minutes: %s" min-to-app appt-msg))
   (appt-disp-window min-to-app new-time appt-msg))
 
 
