@@ -29,6 +29,7 @@
     "orf" 'org-roam-node-find
     "ori" 'org-roam-node-insert
     "orc" 'org-roam-capture
+    "ordc" 'org-roam-dailies-capture-today
     "orb" 'org-roam-buffer-toggle
     ;; "orr" 'org-roam
     ;; "ord" 'org-roam-dailies-capture-today
