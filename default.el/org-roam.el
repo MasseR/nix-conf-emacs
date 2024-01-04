@@ -30,6 +30,10 @@
     "ori" 'org-roam-node-insert
     "orc" 'org-roam-capture
     "ordc" 'org-roam-dailies-capture-today
+    "ordt" 'org-roam-dailies-goto-today
+    "ordd" 'org-roam-dailies-goto-date
+    "ord[" 'org-roam-dailies-goto-previous-note
+    "ord]" 'org-roam-dailies-goto-next-note
     "orb" 'org-roam-buffer-toggle
     ;; "orr" 'org-roam
     ;; "ord" 'org-roam-dailies-capture-today
