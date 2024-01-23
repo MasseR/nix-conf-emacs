@@ -73,6 +73,7 @@ emacs.pkgs.withPackages ( epkgs: with epkgs; [
   notmuch
 
   org-roam
+  org-download
 
   ivy
   counsel

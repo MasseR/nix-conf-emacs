@@ -15,6 +15,7 @@ let
   # eglot = builtins.readFile ./eglot.el;
   lsp-mode = builtins.readFile ./lsp.el;
   org-roam = builtins.readFile ./org-roam.el;
+  org-download = builtins.readFile ./org-download.el;
   ledger = builtins.readFile ./ledger.el;
   whitespace = builtins.readFile ./whitespace.el;
   general = builtins.readFile ./general.el;
@@ -74,7 +75,9 @@ ${company}
 ${whitespace}
 ${epa}
 ${org-roam}
+${org-download}
 ${todotxt}
+
 
 
 (use-package yaml-mode)
