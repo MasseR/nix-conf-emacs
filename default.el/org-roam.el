@@ -35,6 +35,8 @@
     "ord[" 'org-roam-dailies-goto-previous-note
     "ord]" 'org-roam-dailies-goto-next-note
     "orb" 'org-roam-buffer-toggle
+    "orta" 'org-roam-tag-add
+    "ortd" 'org-roam-tag-remove
     ;; "orr" 'org-roam
     ;; "ord" 'org-roam-dailies-capture-today
     ;; "org" 'org-roam-graph
