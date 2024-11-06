@@ -14,8 +14,6 @@ let
   org = builtins.readFile ./org.el;
   # eglot = builtins.readFile ./eglot.el;
   lsp-mode = builtins.readFile ./lsp.el;
-  org-roam = builtins.readFile ./org-roam.el;
-  org-download = builtins.readFile ./org-download.el;
   ledger = builtins.readFile ./ledger.el;
   whitespace = builtins.readFile ./whitespace.el;
   general = builtins.readFile ./general.el;
@@ -74,8 +72,6 @@ ${ledger}
 ${company}
 ${whitespace}
 ${epa}
-${org-roam}
-${org-download}
 ${todotxt}
 
 
@@ -90,7 +86,6 @@ ${todotxt}
 (use-package which-key
   :config (which-key-mode)
   )
-(use-package notmuch)
 
 '';
 

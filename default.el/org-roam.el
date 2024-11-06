@@ -14,7 +14,7 @@
                                  :unnarrowed t)
                                 ("m" "meeting" plain "%?"
                                  :target (file+head  "%<%Y%m%d%H%M%S>-${slug}.org"
-                                                     "#+title: %<%Y-%m-%d> ${title}\n\n* Project\n* Attendees\n* Agenda\n* Goals\n* Discussion notes\n* Action items\n")
+                                                     "#+title: %<%Y-%m-%d> ${title}\n:#:filetags: :meeting-unrefined:\n\n* Project\n* Attendees\n* Agenda\n* Goals\n* Discussion notes\n* Action items\n")
                                  :unnarrowed t)
                                 ("p" "Project" plain "%?"
                                  :target (file+head  "%<%Y%m%d%H%M%S>-${slug}.org"
