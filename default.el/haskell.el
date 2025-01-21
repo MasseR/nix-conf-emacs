@@ -21,20 +21,20 @@
 ;; (eglot--code-action eglot-code-action-refine "refactor.wingman.refine")
 ;; (eglot--code-action eglot-code-action-import "quickfix.import.new.list.topLevel")
 
-(use-package haskell-mode
+(use-package haskell-ts-mode
   :after evil
   :config
-  (evil-define-key 'normal haskell-mode-map "O" 'haskell-evil-open-above)
-  (evil-define-key 'normal haskell-mode-map "o" 'haskell-evil-open-below)
+  (evil-define-key 'normal haskell-ts-mode-map "O" 'haskell-evil-open-above)
+  (evil-define-key 'normal haskell-ts-mode-map "o" 'haskell-evil-open-below)
   ;; (evil-define-key 'normal haskell-mode-map "K" 'lsp-describe-thing-at-point)
-  (evil-define-key 'normal haskell-mode-map "]n" 'flymake-goto-next-error)
-  (evil-define-key 'normal haskell-mode-map "[n" 'flymake-goto-prev-error)
+  (evil-define-key 'normal haskell-ts-mode-map "]n" 'flymake-goto-next-error)
+  (evil-define-key 'normal haskell-ts-mode-map "[n" 'flymake-goto-prev-error)
 
   (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
   (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-quick-look)
-  (evil-define-key 'normal haskell-mode-map "gd" 'xref-find-definitions)
-  (evil-define-key 'normal haskell-mode-map "gr" 'xref-find-references)
-  (evil-leader/set-key-for-mode 'haskell-mode
+  (evil-define-key 'normal haskell-ts-mode-map "gd" 'xref-find-definitions)
+  (evil-define-key 'normal haskell-ts-mode-map "gr" 'xref-find-references)
+  (evil-leader/set-key-for-mode 'haskell-ts-mode
     ;; "ca" 'eglot-code-actions
     ;; "ii" 'eglot-code-action-import
     ;; "ww" 'eglot-code-action-refine
