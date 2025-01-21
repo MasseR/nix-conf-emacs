@@ -1,3 +1,7 @@
+(use-package lsp-completion
+  :config
+  (lsp-inline-completion-mode))
+
 (use-package flycheck
   :custom
   (global-flycheck-mode))
@@ -12,7 +16,6 @@
   :hook ((prog-mode . lsp-deferred))  ;; Enable for all programming modes
   :commands (lsp lsp-deferred)
   :custom
-  (lsp-auto-guess-root t)  ;; Detect project root
   (lsp-log-io nil)        ;; Don't log everything
   (lsp-keymap-prefix "C-c l")  ;; Set prefix for lsp-command-keymap
   (lsp-diagnostics-provider :flycheck)
