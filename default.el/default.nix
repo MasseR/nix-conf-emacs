@@ -8,6 +8,7 @@ let
   company = builtins.readFile ./company.el;
   projectile = builtins.readFile ./projectile.el;
   haskell = builtins.readFile ./haskell.el;
+  clojure = builtins.readFile ./clojure.el;
   nix = builtins.readFile ./nix.el;
   ido = builtins.readFile ./ido.el;
   ivy = builtins.readFile ./ivy.el;
@@ -69,6 +70,7 @@ ${helm}
 ${projectile}
 ${dhall}
 ${haskell}
+${clojure}
 ${nix}
 ${ledger}
 ${company}

@@ -2,8 +2,9 @@
 ; Define the known grammars
 
 (setq treesit-language-source-alist
-   '((bash "https://github.com/tree-sitter/tree-sitter-bash")
+  '( (bash "https://github.com/tree-sitter/tree-sitter-bash")
      (cmake "https://github.com/uyha/tree-sitter-cmake")
+     (clojure "https://github.com/sogaiu/tree-sitter-clojure")
      (css "https://github.com/tree-sitter/tree-sitter-css")
      (elisp "https://github.com/Wilfred/tree-sitter-elisp")
      (nix "https://github.com/nix-community/tree-sitter-nix")
@@ -23,13 +24,14 @@
 ;; Note that not all grammars have a revised major mode
 
 (setq major-mode-remap-alist
- '((yaml-mode . yaml-ts-mode)
-   (bash-mode . bash-ts-mode)
-   (js2-mode . js-ts-mode)
-   (typescript-mode . typescript-ts-mode)
-   (json-mode . json-ts-mode)
-   (css-mode . css-ts-mode)
-   (python-mode . python-ts-mode)
-   (haskell-mode . haskell-ts-mode)
-   (nix-mode . nix-ts-mode)
-   (markdown-mode . markdown-ts-mode)))
+  '( (yaml-mode . yaml-ts-mode)
+     (bash-mode . bash-ts-mode)
+     (js2-mode . js-ts-mode)
+     (typescript-mode . typescript-ts-mode)
+     (json-mode . json-ts-mode)
+     (css-mode . css-ts-mode)
+     (python-mode . python-ts-mode)
+     (haskell-mode . haskell-ts-mode)
+     (clojure-mode . clojure-ts-mode)
+     (nix-mode . nix-ts-mode)
+     (markdown-mode . markdown-ts-mode)))
