@@ -80,4 +80,7 @@ emacs.pkgs.withPackages ( epkgs: with epkgs; [
 
   ivy
   counsel
+
+
+  obsidian
 ])
