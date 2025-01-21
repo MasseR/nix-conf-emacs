@@ -1,8 +1,13 @@
 (use-package lsp-mode
   :after evil evil-leader
-  :hook ((haskell-mode . lsp-deferred))
+  :hook ((prog-mode . lsp-deferred))  ;; Enable for all programming modes
   :commands (lsp lsp-deferred)
+  :custom
+  (lsp-auto-guess-root t)  ;; Detect project root
+  (lsp-log-io nil)        ;; Don't log everything
+  (lsp-keymap-prefix "C-c l")  ;; Set prefix for lsp-command-keymap
   :config
+  ;; Your existing client registrations
   (lsp-register-client
    (make-lsp--client
     :new-connection (lsp-stdio-connection "dhall-lsp-server")
@@ -13,50 +18,22 @@
     :new-connection (lsp-stdio-connection "nil")
     :major-modes '(nix-mode)
     :server-id 'lsp-nix))
+  
+  ;; Your evil keybindings
   (evil-define-key 'normal lsp-mode-map
     "gd" 'xref-find-definitions
     "]n" 'flycheck-next-error
     "[n" 'flycheck-previous-error
-    "K" 'lsp-ui-doc-glance
-    )
-  ;; I wasn't able to figure out how to make it work for lsp-mode
-  ;; (evil-leader/set-key-for-mode 'lsp
-  ;;   "a" 'lsp-execute-code-action
-  ;;   "dd" 'lsp-treemacs-error-list
-  ;;   )
+    "K" 'lsp-ui-doc-glance)
+  
   (evil-leader/set-key
     "ca" 'lsp-execute-code-action
     "cl" 'lsp-avy-lens
-    "dd" 'lsp-treemacs-errors-list
-    )
-  )
+    "dd" 'lsp-treemacs-errors-list))
 
 (use-package lsp-ui
-  :config
-  (setq lsp-ui-doc-position 'bottom))
-
-; https://github.com/wbolster/emacs-direnv/issues/28#issuecomment-500388468
-(defun prepare-haskell-in-shell (&rest args)
-  (setq tried-to-start-lsp t)
-  ;; (when (eq major-mode 'haskell-mode)
-  ;;   (setq tried-to-start-lsp t)
-  ;;   (lsp))
-  )
-
-;; Haskell configuration
-;; https://github.com/wbolster/emacs-direnv/issues/28
-(define-advice direnv-update-directory-environment (:after (&rest x) haskell-after-direnv)
-  (when (eq major-mode 'haskell-mode)
-    (lsp)))
-
-(use-package lsp-haskell
-  :after lsp-mode direnv-mode
-  :config
-  (add-hook 'haskell-mode-hook #'lsp)
-  (add-hook 'haskell-literate-mode-hook #'lsp)
-  )
-
-(use-package avy)
-(use-package lsp-treemacs
-  :config
-  (lsp-treemacs-sync-mode 1))
+  :custom
+  (lsp-ui-doc-position 'bottom)
+  (lsp-ui-doc-show-with-cursor t)
+  (lsp-ui-sideline-show-code-actions t)
+  (lsp-ui-sideline-delay 0.05))
