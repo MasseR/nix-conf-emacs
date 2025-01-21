@@ -88,6 +88,9 @@ emacs.pkgs.withPackages ( epkgs: with epkgs; [
 
   cider
 
+
+  gptel
+
   # treesitter requires not only the grammar but specific major modes
   haskell-ts-mode
   nix-ts-mode
