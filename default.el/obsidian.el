@@ -9,3 +9,7 @@
               ("C-c C-o" . obsidian-follow-link-at-point)
               ("C-c C-b" . obsidian-backlink-jump)
               ("C-c C-l" . obsidian-insert-wikilink)))
+
+
+; This seems to cause a segfault
+; (add-hook 'buffer-list-update-hook 'hack-dir-local-variables-non-file-buffer)
