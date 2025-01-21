@@ -84,6 +84,7 @@ emacs.pkgs.withPackages ( epkgs: with epkgs; [
 
   obsidian
 
+  xclip
 
 
   # treesitter requires not only the grammar but specific major modes

@@ -88,8 +88,9 @@ ${treesitter}
   )
 (use-package magit)
 (use-package which-key
-  :config (which-key-mode)
-  )
+  :config (which-key-mode))
+(use-package xclip
+  :config (xclip-mode))
 
 '';
 
@@ -101,4 +102,3 @@ runCommand "default.el" {}
   cp ${nix-environment} $out/share/emacs/site-lisp/nix-environment.el
   cp ${generic} $out/share/emacs/site-lisp/default.el
 ''
-
