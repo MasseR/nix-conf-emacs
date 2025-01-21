@@ -2,9 +2,8 @@
 ;; only be set in the .emacs or equivalent. Or we can cheat and set it
 ;; after the init hook
 (add-hook 'after-init-hook
-          (lambda ()
-            (setq inhibit-startup-screen t)
-            ))
+  (lambda ()
+    (setq inhibit-startup-screen t)))
 
 
 ;; By default emacs detects sentences as ending with a period and
