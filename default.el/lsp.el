@@ -1,6 +1,6 @@
 (use-package flycheck
   :custom
-  (flycheck-mode))
+  (global-flycheck-mode))
 
 (use-package lsp-mode
   :after evil evil-leader evil-collection
