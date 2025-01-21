@@ -2,6 +2,11 @@
   :custom
   (global-flycheck-mode))
 
+(use-package lsp-treemacs
+  :config
+  (setq lsp-treemacs-error-list-expand-depth 5)
+  )
+
 (use-package lsp-mode
   :after evil evil-leader evil-collection
   :hook ((prog-mode . lsp-deferred))  ;; Enable for all programming modes
