@@ -1,5 +1,10 @@
 (use-package gptel
+  :after evil
   :config
+  (evil-global-set-key 'normal (kbd "ga") 'gptel-add)
+  (evil-global-set-key 'visual (kbd "ga") 'gptel-add)
+  (evil-global-set-key 'normal (kbd "gs") 'gptel-menu)
+  (evil-global-set-key 'visual (kbd "gw") 'gptel-rewrite-menu)
   (setq gptel-backend (gptel-make-ollama "Ollama"
                        :host "localhost:11434"
                        :stream t
@@ -13,4 +18,4 @@
     :key (auth-source-pick-first-password :host "openrouter.ai")
     :models '(openai/gpt-4o-mini
                meta-llama/codellama-34b-instruct
-               anthrophic/claude-3-5-sonnet)))
+               anthropic/claude-3.5-sonnet)))
