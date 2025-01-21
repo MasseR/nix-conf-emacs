@@ -86,6 +86,7 @@ emacs.pkgs.withPackages ( epkgs: with epkgs; [
 
   xclip
 
+  cider
 
   # treesitter requires not only the grammar but specific major modes
   haskell-ts-mode
