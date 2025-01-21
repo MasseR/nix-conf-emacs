@@ -1,11 +1,16 @@
+(use-package flycheck
+  :custom
+  (flycheck-mode))
+
 (use-package lsp-mode
-  :after evil evil-leader
+  :after evil evil-leader evil-collection
   :hook ((prog-mode . lsp-deferred))  ;; Enable for all programming modes
   :commands (lsp lsp-deferred)
   :custom
   (lsp-auto-guess-root t)  ;; Detect project root
   (lsp-log-io nil)        ;; Don't log everything
   (lsp-keymap-prefix "C-c l")  ;; Set prefix for lsp-command-keymap
+  (lsp-diagnostics-provider :flycheck)
   :config
   ;; Your existing client registrations
   (lsp-register-client
@@ -20,11 +25,10 @@
     :server-id 'lsp-nix))
 
   ;; Your evil keybindings
-  (evil-define-key 'normal lsp-mode-map
-    "gd" 'xref-find-definitions
-    "]n" 'flycheck-next-error
-    "[n" 'flycheck-previous-error
-    "K" 'lsp-ui-doc-glance)
+  (evil-global-set-key 'normal "gd" 'xref-find-definitions)
+  (evil-global-set-key 'normal  "]x" 'flycheck-next-error)
+  (evil-global-set-key 'normal  "[x" 'flycheck-previous-error)
+  (evil-global-set-key 'normal  "K" 'lsp-ui-doc-glance)
 
   (evil-leader/set-key
     "ca" 'lsp-execute-code-action
