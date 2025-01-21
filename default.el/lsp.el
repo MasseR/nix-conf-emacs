@@ -18,14 +18,14 @@
     :new-connection (lsp-stdio-connection "nil")
     :major-modes '(nix-mode)
     :server-id 'lsp-nix))
-  
+
   ;; Your evil keybindings
   (evil-define-key 'normal lsp-mode-map
     "gd" 'xref-find-definitions
     "]n" 'flycheck-next-error
     "[n" 'flycheck-previous-error
     "K" 'lsp-ui-doc-glance)
-  
+
   (evil-leader/set-key
     "ca" 'lsp-execute-code-action
     "cl" 'lsp-avy-lens
