@@ -20,6 +20,7 @@ let
   epa = builtins.readFile ./emacs_epa.el;
   todotxt = builtins.readFile ./todotxt.el;
   obsidian = builtins.readFile ./obsidian.el;
+  treesitter = builtins.readFile ./treesitter.el;
   nix-environment = runCommand "nix-environment.el" {
     # Inherit or manually set the attrset here
     inherit sqlite qutebrowser;
@@ -75,6 +76,7 @@ ${whitespace}
 ${epa}
 ${todotxt}
 ${obsidian}
+${treesitter}
 
 
 

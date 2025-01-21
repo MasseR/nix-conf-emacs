@@ -83,4 +83,11 @@ emacs.pkgs.withPackages ( epkgs: with epkgs; [
 
 
   obsidian
+
+
+
+  # treesitter requires not only the grammar but specific major modes
+  haskell-ts-mode
+  nix-ts-mode
+  markdown-ts-mode
 ])
