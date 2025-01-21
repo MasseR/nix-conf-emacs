@@ -32,8 +32,26 @@
     "dd" 'lsp-treemacs-errors-list))
 
 (use-package lsp-ui
+  :after lsp-mode
   :custom
   (lsp-ui-doc-position 'bottom)
   (lsp-ui-doc-show-with-cursor t)
   (lsp-ui-sideline-show-code-actions t)
-  (lsp-ui-sideline-delay 0.05))
+  (lsp-ui-sideline-delay 0.05)
+  (lsp-ui-sideline-enable t)
+  (lsp-ui-sideline-show-diagnostics t)
+  (lsp-ui-sideline-show-hover t)
+  (lsp-ui-flycheck-enable t)
+  (lsp-ui-sideline-diagnostics-max-lines 3)  ;; Show multi-line errors
+  (lsp-ui-doc-enable t)                      ;; Enable documentation
+  :config
+  (add-hook 'lsp-mode-hook #'lsp-ui-mode))
+
+(use-package flycheck
+  :hook (lsp-mode . flycheck-mode)
+  :custom
+  (flycheck-indication-mode 'left-fringe)
+  (flycheck-check-syntax-automatically '(save mode-enabled))
+  :config
+  (define-fringe-bitmap 'flycheck-fringe-bitmap-double-arrow
+    [0 0 0 0 0 4 12 28 60 124 252 124 60 28 12 4 0 0 0 0]))
