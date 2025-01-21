@@ -36,3 +36,7 @@
  kept-new-versions 6
  kept-old-versions 2
  version-control t)
+
+
+;; Clean the buffer list periodically every midnight
+(midnight-mode t)
