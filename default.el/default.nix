@@ -11,6 +11,7 @@ let
   gptel = builtins.readFile ./gptel.el;
   clojure = builtins.readFile ./clojure.el;
   nix = builtins.readFile ./nix.el;
+  vimscript = builtins.readFile ./vimscript.el;
   ido = builtins.readFile ./ido.el;
   ivy = builtins.readFile ./ivy.el;
   org = builtins.readFile ./org.el;
@@ -71,6 +72,7 @@ ${helm}
 ${projectile}
 ${dhall}
 ${haskell}
+${vimscript}
 ${clojure}
 ${gptel}
 ${nix}

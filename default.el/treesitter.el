@@ -4,6 +4,7 @@
 (setq treesit-language-source-alist
   '( (bash "https://github.com/tree-sitter/tree-sitter-bash")
      (cmake "https://github.com/uyha/tree-sitter-cmake")
+     (vim "https://github.com/neovim/tree-sitter-vim")
      (clojure "https://github.com/sogaiu/tree-sitter-clojure")
      (css "https://github.com/tree-sitter/tree-sitter-css")
      (elisp "https://github.com/Wilfred/tree-sitter-elisp")
@@ -34,4 +35,5 @@
      (haskell-mode . haskell-ts-mode)
      (clojure-mode . clojure-ts-mode)
      (nix-mode . nix-ts-mode)
-     (markdown-mode . markdown-ts-mode)))
+     (markdown-mode . markdown-ts-mode)
+     (vimscript-mode . vimscript-ts-mode)))

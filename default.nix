@@ -96,4 +96,5 @@ emacs.pkgs.withPackages ( epkgs: with epkgs; [
   nix-ts-mode
   markdown-ts-mode
   clojure-ts-mode
+  vimscript-ts-mode
 ])
