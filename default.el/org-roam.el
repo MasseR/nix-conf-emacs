@@ -3,6 +3,7 @@
   :config
   (setq
    org-roam-directory (file-truename "~/org-roam")
+    org-roam-dailies-directory (file-truename "~/org-roam/periodic")
    ;; org-roam-completion-system 'helm
    ;; org-roam-db-update-method 'immediate
    org-roam-v2-ack t
