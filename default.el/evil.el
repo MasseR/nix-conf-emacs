@@ -15,6 +15,7 @@
     "ss" 'projectile-switch-project
     "]]" 'sp-forward-slurp-sexp
     "[[" 'sp-forward-barf-sexp
+    "ff" 'counsel-rg
     )
   (evil-set-undo-system 'undo-tree)
   (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
