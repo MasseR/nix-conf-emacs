@@ -16,6 +16,6 @@
     ; For some reason the automatic detection didn't work
     ; The authentication info is stored in one of ~/.authinfo or ~/.authinfo.gpg
     :key (auth-source-pick-first-password :host "openrouter.ai")
-    :models '(openai/gpt-4o-mini
-               meta-llama/codellama-34b-instruct
-               anthropic/claude-3.5-sonnet)))
+    :models '( openai/gpt-4o-mini
+               anthropic/claude-3.5-sonnet
+               deepseek/deepseek-chat)))
