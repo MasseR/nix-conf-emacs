@@ -15,7 +15,7 @@
                                  :unnarrowed t)
                                 ("m" "meeting" plain "%?"
                                  :target (file+head  "%<%Y%m%d%H%M%S>-${slug}.org"
-                                                     "#+title: %<%Y-%m-%d> ${title}\n:#:filetags: :meeting-unrefined:\n\n* Project\n* Attendees\n* Agenda\n* Goals\n* Discussion notes\n* Action items\n")
+                                                     "#+title: %<%Y-%m-%d> ${title}\n:#:filetags: :meeting/unrefined:\n\n* Project\n* Attendees\n* Agenda\n* Goals\n* Discussion notes\n* Action items\n")
                                  :unnarrowed t)
                                 ("p" "Project" plain "%?"
                                  :target (file+head  "%<%Y%m%d%H%M%S>-${slug}.org"
@@ -46,11 +46,11 @@
 ; (use-package org-roam-protocol)
 
 ;; For now not enabling this. A quick test shows that it requires a
-;; single emacs instance to be running because of webscoket ports.
-;; (use-package org-roam-ui
-;;   :after org-roam
-;;   :config
-;;   (setq org-roam-ui-sync-theme t
-;;         org-roam-ui-follow t
-;;         org-roam-ui-update-on-save t
-;;         org-roam-ui-open-on-start t))
+;; single emacs instance to be running because of websocket ports.
+(use-package org-roam-ui
+  :after org-roam
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))

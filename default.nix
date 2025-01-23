@@ -76,7 +76,7 @@ emacs.pkgs.withPackages ( epkgs: with epkgs; [
   org-download
 
   # See comments on org-roam.el
-  # org-roam-ui
+  org-roam-ui
 
   ivy
   counsel
