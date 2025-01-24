@@ -19,6 +19,7 @@
      (toml "https://github.com/tree-sitter/tree-sitter-toml")
      (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
      (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
+     (mermaid "https://github.com/monaqa/tree-sitter-mermaid")
      (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
 
 ;; We need both the grammar and the revised major mode

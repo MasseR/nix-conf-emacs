@@ -78,6 +78,11 @@ emacs.pkgs.withPackages ( epkgs: with epkgs; [
   # See comments on org-roam.el
   org-roam-ui
 
+  # The ts-mode is quite barebones
+  # and the grammar support is limited
+  mermaid-mode
+  ob-mermaid
+
   ivy
   counsel
 

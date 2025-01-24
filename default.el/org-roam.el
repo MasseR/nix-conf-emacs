@@ -11,7 +11,7 @@
                                           (propertize "${tags:10}" 'face 'org-tag))
    org-roam-capture-templates '(("d" "default" plain "%?"
                                  :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-                                                    "#+title: ${title}\n")
+                                                    "#+title: ${title}\n#+date: %<%Y-%m-%d>")
                                  :unnarrowed t)
                                 ("m" "meeting" plain "%?"
                                  :target (file+head  "%<%Y%m%d%H%M%S>-${slug}.org"
@@ -22,6 +22,7 @@
                                                      "#+title: %<%Y-%m-%d> ${title}\n\n* Project description\n* Project information\n\n")
                                  :unnarrowed t)
                                 )
+
    )
   (org-roam-db-autosync-mode)
   ; (add-hook 'after-init-hook 'org-roam-mode)

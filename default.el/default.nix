@@ -12,6 +12,7 @@ let
   clojure = builtins.readFile ./clojure.el;
   nix = builtins.readFile ./nix.el;
   vimscript = builtins.readFile ./vimscript.el;
+  mermaid = builtins.readFile ./mermaid.el;
   ido = builtins.readFile ./ido.el;
   ivy = builtins.readFile ./ivy.el;
   org = builtins.readFile ./org.el;
@@ -70,6 +71,7 @@ ${org-roam}
 ${evil}
 ${lsp-mode}
 ${neotree}
+${mermaid}
 ${helm}
 ${projectile}
 ${dhall}
