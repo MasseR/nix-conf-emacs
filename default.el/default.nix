@@ -13,6 +13,7 @@ let
   nix = builtins.readFile ./nix.el;
   vimscript = builtins.readFile ./vimscript.el;
   mermaid = builtins.readFile ./mermaid.el;
+  d2 = builtins.readFile ./d2.el;
   ido = builtins.readFile ./ido.el;
   ivy = builtins.readFile ./ivy.el;
   org = builtins.readFile ./org.el;
@@ -72,6 +73,7 @@ ${evil}
 ${lsp-mode}
 ${neotree}
 ${mermaid}
+${d2}
 ${helm}
 ${projectile}
 ${dhall}

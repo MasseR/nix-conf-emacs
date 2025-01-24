@@ -72,7 +72,8 @@
   (org-babel-do-load-languages
    'org-babel-load-languages
     '((dot . t)
-       (mermaid . t)))
+       (mermaid . t)
+       (d2 . t)))
   )
 (use-package org-protocol)
 

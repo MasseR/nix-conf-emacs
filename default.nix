@@ -81,7 +81,10 @@ emacs.pkgs.withPackages ( epkgs: with epkgs; [
   # The ts-mode is quite barebones
   # and the grammar support is limited
   mermaid-mode
-  ob-mermaid
+  ob-mermaid # org-mode exports from source blocks
+
+  d2-mode
+  ob-d2 # org-mode exports from source blocks
 
   ivy
   counsel
