@@ -28,6 +28,13 @@ By focusing on these elements, assess whether the note adheres to the principles
                        :stream t
                         :models '( llama3.2:latest
                                    deepseek-r1 )))
+  ;; Probably too old version of the plugin?
+  ;; (gptel-make-perplexity "Perplexity"
+  ;;   :stream t
+  ;;   ; For some reason the automatic detection didn't work
+  ;;   ; The authentication info is stored in one of ~/.authinfo or ~/.authinfo.gpg
+  ;;   :key (auth-source-pick-first-password :host "api.perplexity.ai")
+  ;;   :models '( sonar sonar-pro ))
   (gptel-make-openai "OpenRouter"
     :host "openrouter.ai"
     :endpoint "/api/v1/chat/completions"
@@ -38,4 +45,10 @@ By focusing on these elements, assess whether the note adheres to the principles
     :models '( openai/gpt-4o-mini
                anthropic/claude-3.5-sonnet
                deepseek/deepseek-chat
-               deepseek/deepseek-r1-distill-llama-70b)))
+               deepseek/deepseek-r1-distill-llama-70b
+               ;; Poor substitute for the proper perplexity api
+               ;; as this doesn't provide the sources
+               ;;
+               ;; And .. I have the automatic recurring 5$ for perplexity through membership
+               ;; while the openrouter version is expensive. Probably the most expensive I have here
+               perplexity/llama-3.1-sonar-large-128k-online)))
