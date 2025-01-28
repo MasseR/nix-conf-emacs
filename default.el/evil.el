@@ -8,8 +8,8 @@
   (evil-mode t)
   (evil-leader/set-key
     "gs" 'magit-status
-    ;; "lb" 'helm-buffers-list
-    "lb" 'projectile-switch-to-buffer
+    "mb" 'helm-buffers-list ; List all buffers
+    "lb" 'projectile-switch-to-buffer ; List project local buffers
     "lf" 'projectile-find-file
     "ps" 'projectile-switch-project
     "ss" 'projectile-switch-project
