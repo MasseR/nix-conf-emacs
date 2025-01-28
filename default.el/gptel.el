@@ -43,12 +43,10 @@ By focusing on these elements, assess whether the note adheres to the principles
     ; The authentication info is stored in one of ~/.authinfo or ~/.authinfo.gpg
     :key (auth-source-pick-first-password :host "openrouter.ai")
     :models '( openai/gpt-4o-mini
+               openai/gpt-4o-mini:online
                anthropic/claude-3.5-sonnet
+               anthropic/claude-3.5-sonnet:online
                deepseek/deepseek-chat
+               deepseek/deepseek-chat:online
                deepseek/deepseek-r1-distill-llama-70b
-               ;; Poor substitute for the proper perplexity api
-               ;; as this doesn't provide the sources
-               ;;
-               ;; And .. I have the automatic recurring 5$ for perplexity through membership
-               ;; while the openrouter version is expensive. Probably the most expensive I have here
-               perplexity/llama-3.1-sonar-large-128k-online)))
+               )))
