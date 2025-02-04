@@ -32,11 +32,17 @@
     :major-modes '(nix-mode)
     :server-id 'lsp-nix))
 
+  ; lsp-mode forcibly tries to install copilot, I'm not ready for it right now
+  ;; (setq lsp-copilot-applicable-fn (-const nil))
+  (setq lsp-copilot-enabled nil)
+
+
   ;; Your evil keybindings
   (evil-global-set-key 'normal "gd" 'xref-find-definitions)
   (evil-global-set-key 'normal  "]x" 'flycheck-next-error)
   (evil-global-set-key 'normal  "[x" 'flycheck-previous-error)
   (evil-global-set-key 'normal  "K" 'lsp-ui-doc-glance)
+  (evil-define-key 'normal lsp-mode-map "gq" #'lsp-format-region)
 
   (evil-leader/set-key
     "ca" 'lsp-execute-code-action
