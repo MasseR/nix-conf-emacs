@@ -3,12 +3,12 @@
 let
   evil = builtins.readFile ./evil.el;
   dhall = builtins.readFile ./dhall.el;
+  rust = builtins.readFile ./rust.el;
   neotree = builtins.readFile ./neotree.el;
   helm = builtins.readFile ./helm.el;
   company = builtins.readFile ./company.el;
   projectile = builtins.readFile ./projectile.el;
   haskell = builtins.readFile ./haskell.el;
-  gptel = builtins.readFile ./gptel.el;
   clojure = builtins.readFile ./clojure.el;
   nix = builtins.readFile ./nix.el;
   vimscript = builtins.readFile ./vimscript.el;
@@ -80,8 +80,8 @@ ${dhall}
 ${haskell}
 ${vimscript}
 ${clojure}
-${gptel}
 ${nix}
+${rust}
 ${ledger}
 ${company}
 ${whitespace}

@@ -24,9 +24,10 @@
 (use-package haskell-ts-mode
   :after evil
   :config
+  (setq lsp-haskell-formatting-provider 'fourmolu)
   (evil-define-key 'normal haskell-ts-mode-map "O" 'haskell-evil-open-above)
   (evil-define-key 'normal haskell-ts-mode-map "o" 'haskell-evil-open-below)
-  ;; (evil-define-key 'normal haskell-mode-map "K" 'lsp-describe-thing-at-point)
+  ;; (evil-define-key 'normal haskell-mode-map "K" 'sp-describe-thing-at-point)
   (evil-define-key 'normal haskell-ts-mode-map "]n" 'flymake-goto-next-error)
   (evil-define-key 'normal haskell-ts-mode-map "[n" 'flymake-goto-prev-error)
 

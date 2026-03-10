@@ -1,3 +1,38 @@
+;; From LLM's
+;; Doesn't work yet
+;; (defun my/org-stuck-projects ()
+;;   "Find stuck projects according to custom rules."
+;;   (let ((inhibit-redisplay t)
+;;         (org-agenda-files (org-agenda-files))
+;;         (org-agenda-skip-unavailable-files t)
+;;         (projects nil))
+;;     (org-map-entries
+;;      (lambda ()
+;;        (let* ((is-ordered (org-entry-get nil "ORDERED"))
+;;               (has-workable-task nil))
+;;          ;; For ORDERED projects, only first non-DONE task needs to be workable
+;;          (if is-ordered
+;;              (org-map-entries
+;;               (lambda ()
+;;                 (when (and (member (org-get-todo-state) '("TODO" "NEXT" "WAIT"))
+;;                            (not has-workable-task))
+;;                   (when (member (org-get-todo-state) '("TODO" "NEXT"))
+;;                     (setq has-workable-task t))))
+;;               nil 'tree)
+;;            ;; For non-ORDERED projects, any TODO or NEXT makes it not stuck
+;;            (org-map-entries
+;;             (lambda ()
+;;               (when (member (org-get-todo-state) '("TODO" "NEXT"))
+;;                 (setq has-workable-task t)))
+;;             nil 'tree))
+;;          (unless has-workable-task
+;;            (push (point-marker) projects))))
+;;      "LEVEL=1+NEXT" 'agenda)
+;;     projects))
+
+;; (setq org-agenda-custom-commands
+;;       '(("P" "Stuck Projects" my/org-stuck-projects)))
+
 ;; Reminders taken from
 ;; http://doc.norang.ca/org-mode.html
 (defun bh/org-agenda-to-appt ()
