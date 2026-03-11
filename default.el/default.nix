@@ -2,6 +2,7 @@
 
 let
   evil = builtins.readFile ./evil.el;
+  ai = builtins.readFile ./ai.el;
   dhall = builtins.readFile ./dhall.el;
   rust = builtins.readFile ./rust.el;
   neotree = builtins.readFile ./neotree.el;
@@ -89,6 +90,7 @@ ${epa}
 ${todotxt}
 ${obsidian}
 ${treesitter}
+${ai}
 
 
 

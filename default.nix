@@ -9,6 +9,10 @@ in
 emacs.pkgs.withPackages ( epkgs: with epkgs; [
   default-el
 
+  # ai stuff
+  acp
+  agent-shell
+
   # eglot
 
   evil
