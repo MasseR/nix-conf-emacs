@@ -94,7 +94,8 @@ emacs.pkgs.withPackages ( epkgs: with epkgs; [
 
   ivy
   counsel
-
+  prescient
+  ivy-prescient
 
   obsidian
 
