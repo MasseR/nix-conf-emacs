@@ -19,6 +19,7 @@
   (lsp-log-io nil)        ;; Don't log everything
   (lsp-keymap-prefix "C-c l")  ;; Set prefix for lsp-command-keymap
   (lsp-diagnostics-provider :flycheck)
+  (lsp-idle-delay 1.0)
   :config
   ;; Your existing client registrations
   (lsp-register-client
@@ -44,8 +45,19 @@
   (evil-global-set-key 'normal  "K" 'lsp-ui-doc-glance)
   (evil-define-key 'normal lsp-mode-map "gq" #'lsp-format-region)
 
+  (defun my/lsp-execute-code-action-always-prompt ()
+    "Like `lsp-execute-code-action' but always prompts, even with a single action."
+    (interactive)
+    (let ((actions (lsp-code-actions-at-point)))
+      (if (seq-empty-p actions)
+          (message "No code actions available")
+        (lsp-execute-code-action
+         (let* ((titles (mapcar (lambda (a) (gethash "title" a)) actions))
+                (choice (completing-read "Code action: " titles nil t)))
+           (seq-find (lambda (a) (string= (gethash "title" a) choice)) actions))))))
+
   (evil-leader/set-key
-    "ca" 'lsp-execute-code-action
+    "ca" 'my/lsp-execute-code-action-always-prompt
     "cl" 'lsp-avy-lens
     "dd" 'lsp-treemacs-errors-list))
 
@@ -55,7 +67,7 @@
   (lsp-ui-doc-position 'bottom)
   (lsp-ui-doc-show-with-cursor t)
   (lsp-ui-sideline-show-code-actions t)
-  (lsp-ui-sideline-delay 0.05)
+  (lsp-ui-sideline-delay 1.0)
   (lsp-ui-sideline-enable t)
   (lsp-ui-sideline-show-diagnostics t)
   (lsp-ui-sideline-show-hover t)
