@@ -1,4 +1,4 @@
-{ emacs, callPackage }:
+{ emacs-pgtk, callPackage }:
 
 let
   default-el = callPackage ./default.el {};
@@ -6,7 +6,7 @@ let
 in
 
 # ((emacsPackagesGen emacs).overrideScope' overrides).emacsWithPackages ( epkgs: with epkgs; [
-emacs.pkgs.withPackages ( epkgs: with epkgs; [
+emacs-pgtk.pkgs.withPackages ( epkgs: with epkgs; [
   default-el
 
   # ai stuff
