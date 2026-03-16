@@ -103,6 +103,7 @@
     "t" 'org-todo
     "s" 'org-schedule
     "d" 'org-deadline
+    "cU" 'org-update-all-dblocks  ; Update all clocktables in buffer
     )
   (org-babel-do-load-languages
    'org-babel-load-languages
