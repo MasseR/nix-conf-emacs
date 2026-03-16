@@ -1,15 +1,17 @@
-;; Haskell evil mode is broken
+;; Evil open line commands for haskell-ts-mode
 (defun haskell-evil-open-above ()
   (interactive)
   (evil-digit-argument-or-evil-beginning-of-line)
-  (haskell-indentation-newline-and-indent)
+  (newline)
   (evil-previous-line)
-  (haskell-indentation-indent-line)
+  (indent-according-to-mode)
   (evil-append-line nil))
+
 (defun haskell-evil-open-below ()
   (interactive)
   (evil-append-line nil)
-  (haskell-indentation-newline-and-indent))
+  (newline)
+  (indent-according-to-mode))
 
 ;; Haskell configuration
 ;; https://github.com/wbolster/emacs-direnv/issues/28
