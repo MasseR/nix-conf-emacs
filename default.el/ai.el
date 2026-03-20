@@ -16,5 +16,6 @@
     "At" 'agent-shell-toggle       ; Show/hide agent shell
     "Ao" 'agent-shell-other-buffer ; Switch to associated buffer
     "Ar" 'agent-shell-rename-buffer ; Rename buffer
-    "Am" 'agent-shell-set-session-model)) ; Change model
+    "Am" 'agent-shell-set-session-model ; Change model
+    "Ac" 'agent-shell-clear-buffer)) ; Clear buffer
 (use-package acp)
