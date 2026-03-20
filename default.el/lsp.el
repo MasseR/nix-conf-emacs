@@ -1,6 +1,7 @@
 (use-package lsp-completion
   :config
-  (lsp-inline-completion-mode))
+  (lsp-inline-completion-mode)
+  (setq lsp-completion-enable-additional-text-edit t))  ; Enable auto-import for rust-analyzer
 
 (use-package flycheck
   :custom
