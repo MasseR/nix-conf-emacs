@@ -77,7 +77,6 @@
    org-log-done 'time
    org-refile-use-outline-path nil
    org-agenda-todo-ignore-scheduled t ; Filter scheduled tasks from the *global todo list*
-   org-stuck-projects '("/PROJECT" ("TODO") nil "")
    ;; Set this in each environments ~/.emacs
    ;; org-default-notes-file "~/personal_orgmode/inbox.org"
    org-refile-targets '((org-agenda-files :maxlevel . 3))
