@@ -78,12 +78,6 @@ emacs-pgtk.pkgs.withPackages ( epkgs: with epkgs; [
 
   notmuch
 
-  org-roam
-  org-download
-
-  # See comments on org-roam.el
-  org-roam-ui
-
   # The ts-mode is quite barebones
   # and the grammar support is limited
   mermaid-mode

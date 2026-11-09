@@ -5,9 +5,13 @@
         evil-want-C-u-scroll t
         )
   :config
-  ;; evil's own leader keys need evil-leader, which the evil-leader
-  ;; use-package below loads only after this one finishes
+  ;; evil-leader must hook into evil-local-mode-hook BEFORE (evil-mode t)
+  ;; globalizes evil: existing buffers (e.g. *scratch*) run the hook
+  ;; during that globalization, and only buffers alive or created after
+  ;; the hook is installed get the <SPC> leader binding
   (require 'evil-leader)
+  (global-evil-leader-mode)
+  (evil-leader/set-leader "<SPC>")
   (evil-mode t)
   (evil-leader/set-key
     "gs" 'magit-status
@@ -23,11 +27,6 @@
   (evil-set-undo-system 'undo-tree)
   (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
   )
-(use-package evil-leader
-  :after evil
-  :config
-  (global-evil-leader-mode)
-  (evil-leader/set-leader "<SPC>"))
 (use-package evil-surround
   :after evil
   :config (global-evil-surround-mode))

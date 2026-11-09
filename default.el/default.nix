@@ -18,7 +18,6 @@ let
   ido = builtins.readFile ./ido.el;
   ivy = builtins.readFile ./ivy.el;
   org = builtins.readFile ./org.el;
-  org-roam = builtins.readFile ./org-roam.el;
   # eglot = builtins.readFile ./eglot.el;
   lsp-mode = builtins.readFile ./lsp.el;
   ledger = builtins.readFile ./ledger.el;
@@ -65,7 +64,6 @@ ${smartparens-conf}
 ${general}
 ${ivy}
 ${org}
-${org-roam}
 ${evil}
 ${lsp-mode}
 ${neotree}

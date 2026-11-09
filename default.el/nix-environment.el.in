@@ -8,5 +8,4 @@
 
 (setq
  emacsql-sqlite3-executable "@sqlite@/bin/sqlite3"
- org-roam-graph-viewer "@qutebrowser@/bin/qutebrowser"
  )
