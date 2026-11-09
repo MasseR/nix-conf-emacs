@@ -1,3 +1,17 @@
+(use-package general
+  :demand t
+  :config
+  ;; <SPC> leader for evil states. Mode-specific bindings pass :keymaps
+  ;; and take precedence over the global ones.
+  ;; evil binds SPC (evil-forward-char) in the motion map; free it so it can
+  ;; act as the leader prefix. Registered here so it runs before any
+  ;; `:after evil` block defines leader keys.
+  (with-eval-after-load (quote evil)
+    (define-key evil-motion-state-map (kbd "SPC") nil))
+  (general-create-definer my/leader
+    :states '(normal visual motion)
+    :prefix "SPC"))
+
 ;; Emacs wants the user to see the startup screen, so this value can
 ;; only be set in the .emacs or equivalent. Or we can cheat and set it
 ;; after the init hook

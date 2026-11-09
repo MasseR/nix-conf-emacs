@@ -37,7 +37,7 @@
   (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-quick-look)
   (evil-define-key 'normal haskell-ts-mode-map "gd" 'xref-find-definitions)
   (evil-define-key 'normal haskell-ts-mode-map "gr" 'xref-find-references)
-  (evil-leader/set-key-for-mode 'haskell-ts-mode
+  (my/leader :keymaps 'haskell-ts-mode-map
     ;; "ca" 'eglot-code-actions
     ;; "ii" 'eglot-code-action-import
     ;; "ww" 'eglot-code-action-refine

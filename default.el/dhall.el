@@ -3,7 +3,7 @@
   :config
   (sp-local-pair 'dhall-mode "\\(" ")")
   (sp-local-pair 'dhall-mode "''" "''")
-  (evil-leader/set-key-for-mode 'dhall-mode
+  (my/leader :keymaps 'dhall-mode-map
     ; No code actions for dhall :(
     ;; "a" 'lsp-execute-code-action
     "dd" 'flycheck-list-errors

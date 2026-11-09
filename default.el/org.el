@@ -31,7 +31,7 @@
 
 
 (use-package org
-  :after evil evil-leader
+  :after evil general
   :config
   ; Add a hook for whenever the agenda is finalized to create the appointments
   (add-hook 'org-agenda-finalize-hook 'bh/org-agenda-to-appt 'append)
@@ -56,15 +56,11 @@
                                  (tags priority-down category-keep)
                                  (search category-keep))
    )
-  (evil-leader/set-key
+  (my/leader
                                         ; Allows using capture in any buffer, not just in org-mode
     "cc" 'org-capture
     "a" 'org-agenda)
-  (evil-leader/set-key-for-mode 'org-agenda-mode
-    "t" 'org-agenda-filter-by-tag
-    "v" 'org-agenda-log-mode
-  )
-  (evil-leader/set-key-for-mode 'org-mode
+  (my/leader :keymaps 'org-mode-map
     "t" 'org-todo
     "s" 'org-schedule
     "d" 'org-deadline

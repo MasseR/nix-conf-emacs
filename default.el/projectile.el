@@ -9,7 +9,7 @@
    "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs"
    "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS" "configure.in"
    "configure.ac" "cscope.out" "package.yaml" "*.cabal" "flake.nix"))
-  (evil-leader/set-key
+  (my/leader
     "ps" 'projectile-switch-project
     )
   )

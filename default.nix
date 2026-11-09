@@ -16,7 +16,7 @@ emacs-pgtk.pkgs.withPackages ( epkgs: with epkgs; [
   # eglot
 
   evil
-  evil-leader
+  general
   evil-numbers
   evil-surround
   evil-commentary

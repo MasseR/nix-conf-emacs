@@ -1,9 +1,9 @@
 (use-package neotree
-  :after evil evil-leader projectile
+  :after evil general projectile
   :config
   (setq projectile-switch-project-action 'neotree-projectile-action)
   (setq neo-smart-open t)
-  (evil-leader/set-key
+  (my/leader
     "ft" 'neotree-toggle)
   (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
   (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)

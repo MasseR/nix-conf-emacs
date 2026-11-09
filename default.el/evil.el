@@ -5,15 +5,8 @@
         evil-want-C-u-scroll t
         )
   :config
-  ;; evil-leader must hook into evil-local-mode-hook BEFORE (evil-mode t)
-  ;; globalizes evil: existing buffers (e.g. *scratch*) run the hook
-  ;; during that globalization, and only buffers alive or created after
-  ;; the hook is installed get the <SPC> leader binding
-  (require 'evil-leader)
-  (global-evil-leader-mode)
-  (evil-leader/set-leader "<SPC>")
   (evil-mode t)
-  (evil-leader/set-key
+  (my/leader
     "gs" 'magit-status
     "mb" 'helm-buffers-list ; List all buffers
     "lb" 'projectile-switch-to-buffer ; List project local buffers
@@ -48,5 +41,12 @@
   :config (evil-org-agenda-set-keys))
 (use-package evil-collection
   :after evil
-  :config (evil-collection-init)
-  )
+  :config
+  (evil-collection-init)
+  ;; The agenda binds SPC itself (org-agenda-show-and-scroll-up). Registered
+  ;; after evil-collection-init so this runs after its agenda setup too.
+  (with-eval-after-load (quote org-agenda)
+    (general-define-key :states '(normal motion) :keymaps 'org-agenda-mode-map "SPC" nil)
+    (my/leader :keymaps (quote org-agenda-mode-map)
+      "t" (quote org-agenda-filter-by-tag)
+      "v" (quote org-agenda-log-mode))))

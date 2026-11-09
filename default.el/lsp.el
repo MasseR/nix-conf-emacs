@@ -14,7 +14,7 @@
   )
 
 (use-package lsp-mode
-  :after evil evil-leader evil-collection
+  :after evil general evil-collection
   :hook ((prog-mode . lsp-deferred))  ;; Enable for all programming modes
   :commands (lsp lsp-deferred)
   :custom
@@ -58,7 +58,7 @@
                 (choice (completing-read "Code action: " titles nil t)))
            (seq-find (lambda (a) (string= (gethash "title" a) choice)) actions))))))
 
-  (evil-leader/set-key
+  (my/leader
     "ca" 'my/lsp-execute-code-action-always-prompt
     "cl" 'lsp-avy-lens
     "dd" 'lsp-treemacs-errors-list))
