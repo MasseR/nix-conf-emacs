@@ -1,6 +1,7 @@
 (use-package lsp-completion
   :config
-  (lsp-inline-completion-mode)
+  ;; shortcut: lsp-inline-completion-mode was removed from lsp-mode
+  ;; upstream; upgrade if the auto-import completion feature returns
   (setq lsp-completion-enable-additional-text-edit t))  ; Enable auto-import for rust-analyzer
 
 (use-package flycheck

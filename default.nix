@@ -110,4 +110,8 @@ emacs-pgtk.pkgs.withPackages ( epkgs: with epkgs; [
   markdown-ts-mode
   clojure-ts-mode
   vimscript-ts-mode
+
+  # Grammar shared libraries land in the package tree lib/ which the
+  # site-start.el adds to treesit-extra-load-path
+  epkgs.treesit-grammars.with-all-grammars
 ])

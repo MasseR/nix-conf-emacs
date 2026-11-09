@@ -1,7 +1,7 @@
 (use-package projectile
   :after evil
   :config
-  (projectile-global-mode 1)
+  (projectile-mode 1)
   (setq
     projectile-project-root-files '("rebar.config" "project.clj"
    "build.boot" "deps.edn" "SConstruct" "pom.xml" "build.sbt"

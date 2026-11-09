@@ -5,6 +5,9 @@
         evil-want-C-u-scroll t
         )
   :config
+  ;; evil's own leader keys need evil-leader, which the evil-leader
+  ;; use-package below loads only after this one finishes
+  (require 'evil-leader)
   (evil-mode t)
   (evil-leader/set-key
     "gs" 'magit-status

@@ -12,6 +12,12 @@
 
 (setq default-tab-width 2)
 
+;; load-theme only searches custom-theme-load-path; MELPA themes are
+;; normally registered there by their autoloads, which package.el never
+;; loads in this config. Find the theme file through load-path instead.
+(let ((file (locate-library "zenburn-theme")))
+  (when file
+    (add-to-list 'custom-theme-load-path (file-name-directory file))))
 (load-theme 'zenburn t)
 
 (global-auto-revert-mode t)
