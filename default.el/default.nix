@@ -97,8 +97,26 @@ ${ai}
 (use-package magit)
 (use-package which-key
   :config (which-key-mode))
+;; xclip only matters in terminal frames (emacsclient -nw). It picks the X
+;; `xclip' binary over wl-copy when both exist, so force the Wayland one.
+;; xclip-select-enable-clipboard is separate from select-enable-clipboard;
+;; nil keeps kills out of the clipboard (use "+y / "+p / C-S-v instead).
 (use-package xclip
+  :init
+  (setq xclip-method 'wl-copy
+        xclip-program "wl-copy"
+        xclip-select-enable-clipboard nil)
   :config (xclip-mode))
+
+;; Kills/deletes (evil d, c, x) stay in the kill ring and no longer
+;; overwrite the system clipboard. Use "+y / "+p in evil, or C-S-v to paste
+;; the clipboard anywhere (minibuffer, org link prompts, insert state).
+(setq select-enable-clipboard nil
+      select-enable-primary nil)
+(defun my/paste-clipboard ()
+  (interactive)
+  (insert-for-yank (or (gui-get-selection 'CLIPBOARD 'STRING) "")))
+(global-set-key (kbd "C-S-v") #'my/paste-clipboard)
 
 '';
 

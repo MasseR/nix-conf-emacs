@@ -8,7 +8,7 @@
   :custom
   (org-download-heading-lvl 0)
   (org-download-timestamp "org_%Y%m%d-%H%M%S_")
-  (org-download-screenshot-method "xclip -selection clipboard -t image/png -o > '%s'")
+  (org-download-screenshot-method "wl-paste --type image/png > '%s'")
   :bind
   ("C-M-y" . org-download-screenshot)
   :config
