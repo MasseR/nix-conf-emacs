@@ -1,7 +1,20 @@
-{ emacs-pgtk, callPackage }:
+{ emacs-pgtk, callPackage, fetchFromGitHub }:
 
 let
   default-el = callPackage ./default.el {};
+
+  # Not in nixpkgs, built straight from git
+  mkAgentShellDashboard = epkgs: epkgs.trivialBuild {
+    pname = "agent-shell-dashboard";
+    version = "unstable-2026-07-25";
+    src = fetchFromGitHub {
+      owner = "wandersoncferreira";
+      repo = "agent-shell-dashboard";
+      rev = "e99436e78a2736c3eebdfd036d31f46b22214cde";
+      hash = "sha256-haBpwi/tLc+aJck7nLUDcEbZ4adaP4SqOKuj8OXIFn4=";
+    };
+    packageRequires = [ epkgs.agent-shell ];
+  };
 
 in
 
@@ -12,6 +25,7 @@ emacs-pgtk.pkgs.withPackages ( epkgs: with epkgs; [
   # ai stuff
   acp
   agent-shell
+  (mkAgentShellDashboard epkgs)
 
   # eglot
 

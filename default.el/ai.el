@@ -21,3 +21,9 @@
     "Am" 'agent-shell-set-session-model ; Change model
     "Ac" 'agent-shell-clear-buffer)) ; Clear buffer
 (use-package acp)
+
+(use-package agent-shell-dashboard
+  :after agent-shell
+  :commands (agent-shell-dashboard)
+  :config
+  (my/leader "Ad" 'agent-shell-dashboard)) ; Dashboard of all sessions
