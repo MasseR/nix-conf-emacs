@@ -10,7 +10,7 @@
       (when (string-match-p "\\*agent-shell-diff\\*" (buffer-name))
         (evil-emacs-state))))
 
-  (setq agent-shell-prefer-viewport-interaction t)
+  (setq agent-shell-prefer-viewport-interaction nil)
   ;; Evil leader keybindings for agent-shell
   (my/leader
     "AA" 'agent-shell              ; Start/reuse agent shell
