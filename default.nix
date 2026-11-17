@@ -47,7 +47,6 @@ emacs-pgtk.pkgs.withPackages ( epkgs: with epkgs; [
   yaml-mode
 
   rainbow-delimiters
-  smartparens
 
   lsp-mode
   lsp-ui

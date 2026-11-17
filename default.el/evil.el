@@ -13,8 +13,6 @@
     "lf" 'projectile-find-file
     "ps" 'projectile-switch-project
     "ss" 'projectile-switch-project
-    "]]" 'sp-forward-slurp-sexp
-    "[[" 'sp-forward-barf-sexp
     "ff" 'counsel-rg
     )
   (evil-set-undo-system 'undo-tree)

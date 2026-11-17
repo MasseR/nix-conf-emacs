@@ -27,7 +27,6 @@ let
   todotxt = builtins.readFile ./todotxt.el;
   obsidian = builtins.readFile ./obsidian.el;
   treesitter = builtins.readFile ./treesitter.el;
-  smartparens-conf = builtins.readFile ./smartparens.el;
   nix-environment = runCommand "nix-environment.el" {
     # Inherit or manually set the attrset here
     inherit sqlite;
@@ -60,7 +59,6 @@ substituteAll ${./nix-environment.el.in} $out
   (global-undo-tree-mode)
   (setq undo-tree-auto-save-history nil) )
 (use-package rainbow-delimiters)
-${smartparens-conf}
 ${general}
 ${ivy}
 ${org}
